@@ -3,8 +3,13 @@ import puppeteer from 'puppeteer';
 
 const serp = async (res) => {
 
-    const browser = await puppeteer.launch({ headless: true });
-    
+    const browser = await puppeteer.launch({ 
+        headless: true,
+        executablePath: process.env.NODE_ENV === 'production'
+        ? process.env.PUPPETEER_EXECUTABLE_PATH
+        : puppeteer.executablePath()
+    });
+
     try {
         // google query 
         let query = 'https://www.google.com/search?q=best+seo+agency&gl=pk';
