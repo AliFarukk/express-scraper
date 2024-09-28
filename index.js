@@ -1,3 +1,6 @@
+process.env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = 'false';
+
+
 import express from "express";
 import serp from './serp.js';
 
