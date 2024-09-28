@@ -11,6 +11,7 @@ const serp = async (res) => {
             "--disable-setuid-sandbox",
             "--no-sandbox",
         ],
+        executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome'
         
     });
 
